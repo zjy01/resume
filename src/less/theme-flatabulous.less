@@ -1,0 +1,35 @@
+.flatabulous{
+  background: url("../theme/Flatabulous/bg.jpg");
+  background-size:100%;
+
+  @borderColor: #2d2d2d;
+  @borderShadow:0 0 10px 2px #000;
+
+  .border-shadow{
+    box-shadow:@borderShadow;
+  }
+
+  .menu_top{
+    color: #ccc;
+    background: @borderColor;
+    
+    .sh{
+      &:before {
+        background-image: url("../theme/Flatabulous/icon/actions/symbolic/system-shutdown-symbolic.svg");
+      }
+    }
+  }
+  .menu-list-box{
+    background: @borderColor;
+    border:2px solid @borderColor;
+    .menuList{
+      cursor: pointer;
+      &:hover{
+        background: #666;
+      }
+    }
+  }
+  .nav_left{
+    background: rgba(20,0,100,0.5);
+  }
+}

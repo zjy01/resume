@@ -1,0 +1,14 @@
+[
+  {
+    "menu_title":"关于这台计算机",
+    "action":""
+  },
+  {
+    "menu_title":"我的博客",
+    "action":"BLOG_OPEN"
+  },
+  {
+    "menu_title":"关机",
+    "action":"SHUTDOWN"
+  }
+]
