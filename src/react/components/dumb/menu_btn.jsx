@@ -14,10 +14,10 @@ export default class MenuBtn extends React.Component {
             var target = e.currentTarget;
             var left = target.getBoundingClientRect().left;
             if(window.innerWidth - 200 < left){
-                Style={right : 0};
+                Style={left : window.innerWidth - 202 - left};
             }
             else{
-                Style={left : left};
+                Style={left : 0};
             }
 
             this.props.clickToDo(Style);
@@ -27,9 +27,11 @@ export default class MenuBtn extends React.Component {
         console.log(this.props);
         const { icon, title, menu, menu_type, list } = this.props;
         return(
-            <div className="topBtn" onClick={e => this.handleClick(e)}>
-                { icon && <span className={"menu-icon "+icon}> </span> }
-                { title && <span className="menu-title">{title}</span>}
+            <div className="topBtn">
+                <div onClick={e => this.handleClick(e)}>
+                    { icon && <span className={"menu-icon "+icon}> </span> }
+                    { title && <span className="menu-title">{title}</span>}
+                </div>
                 { list && menu == menu_type && <Menu />}
             </div>
         )

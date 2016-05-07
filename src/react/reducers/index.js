@@ -4,12 +4,12 @@
 import { combineReducers } from 'redux'
 import clock from './clock'
 import menu from './menu'
-import sh from './sh'
+import working from './sh'
 
 const reducer = combineReducers({
     clock,
     menu,
-    sh
+    working
 });
 
 export default reducer;

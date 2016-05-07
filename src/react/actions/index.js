@@ -21,6 +21,7 @@ export function action_menu(type, style){
         return fetch(`./json/menu/menu_${type}.json`)
         .then(response => response.json())
         .then(list => dispatch( menu_open(type, style, list) ))
+        .then(dispatch(menu_close))
     }
 }
 
@@ -46,6 +47,9 @@ export function action_menu_react(type){
             break;
         case 'SHUTDOWN':
             return {type:"shutdown"};
+            break;
+        case 'BOOT':
+            return {type:"boot"};
             break;
     }
 }
