@@ -24,10 +24,13 @@ require("../../less/normalize.css");
 require("../../less/layouts.less");
 require("../../less/theme-flatabulous.less");
 require("../../less/icon.less");
+require("../../less/animation.less");
 
 import Btn from "../components/dumb/menu_btn.jsx";
 
 import { action_menu_react } from '../actions'
+
+var ReactCSSTransitionGroup = require('react-addons-css-transition-group');
 
 class Desktop extends Component {
     handleClick(e){
@@ -44,12 +47,14 @@ class Desktop extends Component {
                     <Nav/>
                     <Content/>
                 </div>
-                {!this.props.working &&
-                <div className="blackBox">
-                    <div className="sh openBtn" title="开机" onClick={()=>this.props.dispatch(action_menu_react('BOOT'))}>
+                <ReactCSSTransitionGroup transitionName="closing">
+                    {!this.props.working &&
+                    <div className="blackBox" key="0">
+                        <div className="sh openBtn" title="开机" onClick={()=>this.props.dispatch(action_menu_react('BOOT'))}>
+                        </div>
                     </div>
-                </div>
-                }
+                    }
+                </ReactCSSTransitionGroup>
             </div>
         )
     }

@@ -12,7 +12,6 @@
   position: fixed;
   top: 0;
   left:0;
-  animation: closing 1s;
   background: #000;
   z-index: 1001;
 }
@@ -96,6 +95,15 @@
     }
   }
 }
+//图标
+.app-icon{
+  text-align: center;
+  position: relative;
+  .icon{
+    background-size:100%;
+    background-repeat: no-repeat;
+  }
+}
 
 .menu-list-box{
   position: absolute;
@@ -108,9 +116,71 @@
 }
 .nav_left{
   width: @navWidth;
+  padding-top: @menuHeight;
   height: 100%;
   position: fixed;
   top:0;
   left:0;
   z-index: 999;
+
+
+  .app-icon {
+    width: @navWidth;
+    height: @navWidth;
+    .icon {
+      margin-top: 10px;
+      width: @navWidth - 14;
+      height: @navWidth - 14;
+      display: inline-block;
+    }
+    .app-title{
+      position: absolute;
+      height: 25px;
+      background: #000;
+      white-space: nowrap;
+      left: @navWidth;
+      top: @navWidth/2 - 8px;
+      width: 0;
+      overflow: hidden;
+      transition: width 0.3s;
+    }
+    &:hover{
+      .app-title{
+        padding: 0 10px;
+        width: 100px;
+      }
+    }
+  }
+}
+
+.content_center{
+  padding-left: @navWidth;
+  padding-top: @menuHeight;
+  .app-icon {
+    width: @navWidth;
+    height: @navWidth;
+    .icon {
+      margin-top: 10px;
+      width: @navWidth - 14;
+      height: @navWidth - 14;
+      display: inline-block;
+    }
+    .app-title{
+      position: absolute;
+      height: 25px;
+      background: #000;
+      white-space: nowrap;
+      left: @navWidth;
+      top: @navWidth/2 - 8px;
+      width: 0;
+      overflow: hidden;
+      transition: width 0.3s;
+    }
+    &:hover{
+      .app-title{
+        padding: 0 10px;
+        width: 100px;
+      }
+    }
+  }
 }
