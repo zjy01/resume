@@ -1,6 +1,7 @@
 /**
  * Created by zjy on 16-3-10.
  */
+import 'babel-polyfill';
 import React from 'react'
 import { render } from 'react-dom'
 import createStore from './store'

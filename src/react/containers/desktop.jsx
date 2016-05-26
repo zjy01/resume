@@ -14,10 +14,13 @@ import Nav from "../components/smart/nav.jsx";
 import Content from "../components/smart/content.jsx";
 
 //actions
-import { menu_close } from '../actions'
+import { menu_close, action_menu_react,task_resize } from '../actions'
 
 //selector
 import selector from '../selectors/shSelector'
+
+//jq
+import $ from 'jquery'
 
 require("../../less/normalize.css");
 //less
@@ -28,13 +31,17 @@ require("../../less/animation.less");
 
 import Btn from "../components/dumb/menu_btn.jsx";
 
-import { action_menu_react } from '../actions'
-
 var ReactCSSTransitionGroup = require('react-addons-css-transition-group');
 
 class Desktop extends Component {
     handleClick(e){
         this.props.dispatch(menu_close());
+    }
+    componentDidMount(){
+        this.props.dispatch(action_menu_react("BOOT"));
+        $(window).on('resize',() => {
+            this.props.dispatch(task_resize());
+        })
     }
     render() {
         console.log(this.props.working );
@@ -47,7 +54,7 @@ class Desktop extends Component {
                     <Nav/>
                     <Content/>
                 </div>
-                <ReactCSSTransitionGroup transitionName="closing">
+                <ReactCSSTransitionGroup transitionName="closing" transitionEnterTimeout={1000} transitionLeaveTimeout={1000}>
                     {!this.props.working &&
                     <div className="blackBox" key="0">
                         <div className="sh openBtn" title="开机" onClick={()=>this.props.dispatch(action_menu_react('BOOT'))}>

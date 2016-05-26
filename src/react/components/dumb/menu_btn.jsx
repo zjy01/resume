@@ -24,7 +24,6 @@ export default class MenuBtn extends React.Component {
         }
     }
     render(){
-        console.log(this.props);
         const { icon, title, menu, menu_type, list } = this.props;
         return(
             <div className="topBtn">

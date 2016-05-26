@@ -12,3 +12,17 @@
   opacity: 0;
   transition: opacity 1s ease-in;
 }
+.app_move-enter {
+  opacity: 0;
+}
+.app_move-enter.app_move-enter-active{
+  opacity: 1;
+  transition: opacity 0.2s ease-in;
+}
+.app_move-leave {
+  opacity: 1;
+}
+.app_move-leave.app_move-leave-active {
+  opacity: 0;
+  transition: opacity 0.2s ease-in;
+}

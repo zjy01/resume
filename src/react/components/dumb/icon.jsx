@@ -2,11 +2,13 @@
  * Created by zjy on 16-3-10.
  */
 import React from 'react';
+import { connect } from 'react-redux'
+import {app_open} from '../../actions';
 
-export default class NavBtn extends React.Component {
+class NavBtn extends React.Component {
     handleClick(e){
-        if(this.props.clickToDo){
-            this.props.clickToDo()
+        if(this.props){
+            this.props.dispatch(app_open(this.props.app_id));
         }
     }
     render(){
@@ -19,3 +21,5 @@ export default class NavBtn extends React.Component {
         )
     }
 }
+
+export default connect(()=>{return {}})(NavBtn);

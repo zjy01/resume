@@ -170,7 +170,12 @@
     }
   }
 }
-
+.task-box{
+  position: absolute;
+  left: @navWidth;
+  top: @menuHeight;
+  overflow: hidden;
+}
 .window-box{
   width: 600px;
   height: 400px;
@@ -178,10 +183,20 @@
   position: absolute;
   left: @navWidth + 250px;
   top: @menuHeight + 50px;
+  overflow: hidden;
+  transition: all 0.2s ease-in;
   .window-opt{
     height: 25px;
+    line-height: 25px;
+    .opt-icon{
+      cursor: pointer;
+      width: 18px;
+      height: 18px;
+      display: inline-block;
+      margin: 2px;
+    }
   }
   .window-body{
-    height: 375px;
+    height: 100%;
   }
 }
