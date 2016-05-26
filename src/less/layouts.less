@@ -157,8 +157,9 @@
   padding-left: @navWidth;
   padding-top: @menuHeight;
   .app-icon {
-    width: @navWidth;
-    height: @navWidth;
+    width: @navWidth + 20;
+    height: @navWidth + 20;
+    text-align: center;
     .icon {
       margin-top: 10px;
       width: @navWidth - 14;
@@ -166,21 +167,21 @@
       display: inline-block;
     }
     .app-title{
-      position: absolute;
-      height: 25px;
-      background: #000;
-      white-space: nowrap;
-      left: @navWidth;
-      top: @navWidth/2 - 8px;
-      width: 0;
-      overflow: hidden;
-      transition: width 0.3s;
     }
-    &:hover{
-      .app-title{
-        padding: 0 10px;
-        width: 100px;
-      }
-    }
+  }
+}
+
+.window-box{
+  width: 600px;
+  height: 400px;
+  border-radius: 5px;
+  position: absolute;
+  left: @navWidth + 250px;
+  top: @menuHeight + 50px;
+  .window-opt{
+    height: 25px;
+  }
+  .window-body{
+    height: 375px;
   }
 }

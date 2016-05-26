@@ -12,9 +12,9 @@ import { action_clock, action_menu, SH } from '../../actions'
 //selector
 import selector from '../../selectors/topSelector'
 
-import NavBtn from "../dumb/icon.jsx";
+import IconList from "../smart/iconlist";
 
-export default class Nav extends React.Component {
+class Nav extends React.Component {
     componentDidMount(){
         setInterval(function () {
             this.props.dispatch(action_clock())
@@ -24,11 +24,7 @@ export default class Nav extends React.Component {
         const {dispatch} = this.props;
         return(
             <div className="nav_left border-shadow">
-                <NavBtn app_title="显示桌面" app="desktop" />
-                <NavBtn app_title="教育经历" app="education" />
-                <NavBtn app_title="社团经验" app="organization" />
-                <NavBtn app_title="项目经验" app="project" />
-                <NavBtn app_title="了解我" app="myself" />
+                <IconList />
             </div>
         )
     }
