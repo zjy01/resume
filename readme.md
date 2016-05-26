@@ -1,6 +1,13 @@
 # resume
+安装依赖
+```
+npm install
+```
+  
+启动项目
 ```
 npm start
 ```
-启动项目
+
+
 `localhost:3000`访问
